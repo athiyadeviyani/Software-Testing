@@ -1,9 +1,11 @@
-/Users/athiyadeviyani/ST/ST/src/st1920/automaton/Transition.java
+/Users/athiyadeviyani/ST/ST/src/st1920/automaton/MatchString.java
+/Users/athiyadeviyani/ST/ST/src/st1920/automaton/MatcherWrapper.java
 /Users/athiyadeviyani/ST/ST/src/st1920/automaton/MinimizationOperations.java
 /Users/athiyadeviyani/ST/ST/src/st1920/automaton/REString.java
 /Users/athiyadeviyani/ST/ST/src/st1920/automaton/TransitionComparator.java
 /Users/athiyadeviyani/ST/ST/src/st1920/automaton/RegExpMatcher.java
 /Users/athiyadeviyani/ST/ST/src/st1920/automaton/State.java
+/Users/athiyadeviyani/ST/ST/src/st1920/automaton/Transition.java
 /Users/athiyadeviyani/ST/ST/src/st1920/automaton/AutomatonProvider.java
 /Users/athiyadeviyani/ST/ST/src/st1920/automaton/RegExp.java
 /Users/athiyadeviyani/ST/ST/src/st1920/automaton/BasicAutomata.java
