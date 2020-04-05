@@ -1,13 +1,18 @@
 package st1920.automaton;
 
+import java.util.Random;
+
 public class MatcherWrapper {
 	
 	public static boolean matches(MatchString m, REString re) {
 		return RegExpMatcher.matches(m.getMatchString(), re.getREString());
 	}
 	
-	
 	// ReString METHODS
+	
+//	public static REString makeEmptyREString() {
+//		return new REString("");
+//	}
 	
 	public static REString makeOrString(REString s1, REString s2) {
 		return new REString(s1.getREString() + '|' + s2.getREString());
@@ -21,35 +26,42 @@ public class MatcherWrapper {
 		return new REString(s1.getREString() + s2.getREString());
 	}
 	
-	public static REString makeAlpha(REString s) {
-		return new REString(s.getREString() + 'a');
+	public static REString makeAlphaREString() {
+		return new REString("a");
 	}
 	
-	public static REString makeNum(REString s) {
-		return new REString(s.getREString() + '1');
+	public static REString makeNumREString() {
+		return new REString("1");
 	}
 	
-	public static REString makeZeroOrOne(REString s) {
-		return new REString(s.getREString() + '?');
+	public static REString makeZeroOrOneREString() {
+		return new REString("?");
 	}
 
-	public static REString makeZeroOrMore(REString s) {
-		return new REString(s.getREString() + '*');
+	public static REString makeZeroOrMoreREString() {
+		return new REString("*");
 	}
 	
-	public static REString makeOneOrMore(REString s) {
-		return new REString(s.getREString() + '+');
+	public static REString makeOneOrMoreREString() {
+		return new REString("+");
 	}
 	
-	public static REString makeNOccurences(REString s, int n) {
+	public static REString makeNOccurences(REString s) {
+		Random rnd = new Random();
+		int n = rnd.nextInt(100);
 		return new REString(s.getREString() + '{' + n + '}');
 	}
 	
-	public static REString makeNOrMoreOccurences(REString s, int n) {
+	public static REString makeNOrMoreOccurences(REString s) {
+		Random rnd = new Random();
+		int n = rnd.nextInt(100);
 		return new REString(s.getREString() + '{' + n + ',' + '}');
 	}
 	
-	public static REString makeBetweenNandMOcc(REString s, int n, int m) {
+	public static REString makeBetweenNandMOcc(REString s) {
+		Random rnd = new Random();
+		int n = rnd.nextInt(100);
+		int m = rnd.nextInt(100);
 		return new REString(s.getREString() + '{' + n + ',' + m + '}');
 	}
 	
@@ -66,22 +78,25 @@ public class MatcherWrapper {
 	}
 	
 	public static REString makeAnyChar(REString s) {
-		return new REString(s.getREString() + '.');
+		return new REString(s.getREString() + ".");
 	}
 	
 	public static REString makeNothing(REString s) {
-		return new REString(s.getREString() + '#');
+		return new REString(s.getREString() + "#");
 	}
 	
 	public static REString makeAnyString(REString s) {
-		return new REString(s.getREString() + '@');
+		return new REString(s.getREString() + "@");
 	}
 	
 	public static REString makeExact(REString s) {
 		return new REString('\"' + s.getREString() + '\"');
 	}
 	
-	public static REString makeNumBetween(REString s, int n, int m) {
+	public static REString makeNumBetween(REString s) {
+		Random rnd = new Random();
+		int n = rnd.nextInt(100);
+		int m = rnd.nextInt(100);
 		return new REString(s.getREString() + '<' + n + '-' + m + '>');
 	}
 	
@@ -91,6 +106,10 @@ public class MatcherWrapper {
 	
 	
 	// MatchString METHODS
+	
+//	public static MatchString makeEmptyString() {
+//		return new MatchString("");
+//	}
 	
 	public static MatchString makeAlpha() {
 		return new MatchString("a");
@@ -104,8 +123,20 @@ public class MatcherWrapper {
 		return new MatchString("%");
 	}
 	
-	public static MatchString makeConcatenation(MatchString l, MatchString r) {
+	public static MatchString makeConcatenationMatchString(MatchString l, MatchString r) {
 		return new MatchString(l.getMatchString() + r.getMatchString());
 	}
 
 }
+
+
+//package st1920.automaton;
+//
+//public class MatcherWrapper {
+//	
+//	public static boolean matches(MatchString m, REString re) {
+//		return RegExpMatcher.matches(m.string, re.string);
+//	}
+//	
+//}
+
