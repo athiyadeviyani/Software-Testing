@@ -9,8 +9,6 @@ public class RegExpMatcher {
 	 * @param m string to be matched
 	 * @param re regular expression
 	 */
-	
-	
 	public static boolean matches(String m, String re) {
 		RegExp regExp = new RegExp(re);
 		Automaton a = regExp.toAutomaton();

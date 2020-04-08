@@ -119,7 +119,8 @@ public class RegExp {
 		REGEXP_STRING,
 		REGEXP_ANYSTRING,
 		REGEXP_AUTOMATON,
-		REGEXP_INTERVAL
+		REGEXP_INTERVAL,
+		REGEXP_NEWLINE
 	}
 	
 	/** 
@@ -333,6 +334,17 @@ public class RegExp {
 		case REGEXP_INTERVAL:
 			a = BasicAutomata.makeInterval(min, max, digits);
 			break;
+		case REGEXP_NEWLINE:
+			list = new ArrayList<Automaton>();
+			Automaton a1, a2, a3 = null;
+			a1 = BasicAutomata.makeString("\n");
+			a2 = BasicAutomata.makeString("\r");
+			a3 = BasicAutomata.makeString("\r\n");
+			list.add(a1);
+			list.add(a2);
+			list.add(a3);
+			a = Automaton.union(list);
+			break;
 		}
 		return a;
 	}
@@ -492,6 +504,12 @@ public class RegExp {
 		r.digits = digits;
 		return r;
 	}
+	
+	private static RegExp makeNewline() {
+		RegExp r = new RegExp();
+		r.kind = Kind.REGEXP_NEWLINE;
+		return r;
+	}
 
 	private boolean peek(String s) {
 		return more() && s.indexOf(b.charAt(pos)) != -1;
@@ -625,6 +643,8 @@ public class RegExp {
 			return makeEmpty();
 		else if (check(ANYSTRING) && match('@'))
 			return makeAnyString();
+		else if(match('$'))
+			return makeNewline();
 		else if (match('"')) {
 			int start = pos;
 			while (more() && !peek("\""))
