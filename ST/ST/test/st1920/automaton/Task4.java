@@ -5,84 +5,95 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 public class Task4 {
-	
+
 	@Test
-	public void test1() {
-		assertTrue(
-				RegExpMatcher.matches("\n", "$"));
-	}
-	
-	@Test
-	public void test2() {
-		assertTrue(
-				RegExpMatcher.matches("\r", "$"));
-	}
-	
-	@Test
-	public void test3() {
-		assertTrue(
-				RegExpMatcher.matches("\r\n", "$"));
+	public void test01() {
+		REString re = new REString("$");
+		assertTrue(Wrapper.matches("\n", re));
 	}
 
 	@Test
-	public void test4() {
-		assertTrue(
-				RegExpMatcher.matches("\r\n", "$$"));
+	public void test02() {
+		REString re = new REString("$");
+		assertTrue(Wrapper.matches("\r", re));
 	}
-	
+
 	@Test
-	public void test5() {
-		assertTrue(
-				RegExpMatcher.matches("\r", "."));
+	public void test03() {
+		REString re = new REString("$");
+		assertTrue(Wrapper.matches("\r\n", re));
 	}
-	
+
 	@Test
-	public void test6() {
-		assertTrue(
-				RegExpMatcher.matches("\n", "."));
+	public void test04() {
+		REString re = new REString("$$");
+		assertTrue(Wrapper.matches("\r\n", re));
 	}
-	
+
 	@Test
-	public void test7() {
-		assertTrue(
-				RegExpMatcher.matches("\r\n", ".."));
+	public void test05() {
+		REString re = new REString(".");
+		assertTrue(Wrapper.matches("\r", re));
 	}
-	
+
 	@Test
-	public void test8() {
-		assertTrue(
-				RegExpMatcher.matches("\r\n", "."));
+	public void test06() {
+		REString re = new REString(".");
+		assertTrue(Wrapper.matches("\n", re));
 	}
-	
+
 	@Test
-	public void test9() {
-		assertFalse(
-				RegExpMatcher.matches("$", "$"));
+	public void test07() {
+		REString re = new REString("..");
+		assertTrue(Wrapper.matches("\r\n", re));
 	}
-	
+
+	@Test
+	public void test08() {
+		REString re = new REString(".");
+		assertFalse(Wrapper.matches("\r\n", re));
+	}
+
+	@Test
+	public void test09() {
+		REString re = new REString("$");
+		assertFalse(Wrapper.matches("$", re));
+	}
+
 	@Test
 	public void test10() {
-		assertFalse(
-				RegExpMatcher.matches("\n", "[$]"));
+		REString re = new REString("[$]");
+		assertFalse(Wrapper.matches("\n", re));
 	}
-	
+
 	@Test
 	public void test11() {
-		assertTrue(
-				RegExpMatcher.matches("\r\n\n\n", "\r\n+"));
+		REString re = new REString("\r\n+");
+		assertTrue(Wrapper.matches("\r\n\n\n", re));
 	}
-	
+
 	@Test
 	public void test12() {
-		assertTrue(
-				RegExpMatcher.matches("\r\n\r\n\r\n", "\r\n+"));
+		REString re = new REString("(\r\n)+");
+		assertTrue(Wrapper.matches("\r\n\r\n\r\n", re));
 	}
-	
+
 	@Test
 	public void test13() {
-		assertFalse(
-				RegExpMatcher.matches("\n\n", "$"));
+		REString re = new REString("$");
+		assertFalse(Wrapper.matches("\n\n", re));
 	}
-	
-	
+
+	@Test
+	public void test14() {
+		REString re = new REString("$");
+		assertFalse(Wrapper.matches("\r\r", re));
+	}
+
+	@Test
+	public void test15() {
+		REString re = new REString("$");
+		assertFalse(Wrapper.matches("\n\r", re));
+	}
+
 }
