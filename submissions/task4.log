@@ -1,0 +1,39 @@
+commit dc41e6f6db7a992c2d97619652dd13b58fdac329
+Author: Derpanov <martin.ivov.parvanov@gmail.com>
+Date:   Thu Apr 9 17:14:40 2020 +0100
+
+    Final tests added and checked, working as expected
+
+M	Task4.java
+
+commit 033fbe406c23674029869453b4f0f57cdbd79974
+Author: Derpanov <martin.ivov.parvanov@gmail.com>
+Date:   Thu Apr 9 14:52:37 2020 +0100
+
+    Added more tests as implementation seems to be working very well
+
+M	Task4.java
+
+commit 2b7f9c89d80bc78c3021b6355cd7707a11b2781b
+Author: Derpanov <martin.ivov.parvanov@gmail.com>
+Date:   Thu Apr 9 14:19:58 2020 +0100
+
+    More tests written, some from Piazza added
+
+M	Task4.java
+
+commit dbf0c391f48c7db2fc7b703f52f2d85c3c1d3978
+Author: Derpanov <martin.ivov.parvanov@gmail.com>
+Date:   Thu Apr 9 13:44:01 2020 +0100
+
+    Initial implementation and more tests
+
+A	RegExp.java
+
+commit 4433f8824c95bf8c5c5aa544cd00a3cc0617dc31
+Author: Derpanov <martin.ivov.parvanov@gmail.com>
+Date:   Thu Apr 9 10:06:43 2020 +0100
+
+    Initial tests before implementing functionality
+
+A	Task4.java
