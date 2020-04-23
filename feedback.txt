@@ -1,0 +1,30 @@
+The marks and comments below are for the students with matriculation numbers s1709906, s1712427
+Note that the marks below are raw, i.e. they do not account for
+potential penalty due to late submissions.
+
+=============================
+Task 1:
+
+Bugs caught: 15/15 [30/30 pts]
+
+=============================
+Task 2:
+Valid screenshot submitted [5/5 pts]
+
+=============================
+Task 3:
+1. Randoop [10/10 pts]:
+2. Manual tests [5/5 pts]
+3. Log [5/5 pts]
+4. Coverage [10/10 pts]
+
+=============================
+Task 4:
+1. Implementation [15/15 pts]
+- Passed all implementation tests.
+2. Test suite [10/15 pts]
+- Tests in Task4.java use wrapper classes implemented in previous task. Does not work on an default implementation of the automaton.
+3. Log [5/5 pts]
+
+=============================
+Overall [95/100 pts]
